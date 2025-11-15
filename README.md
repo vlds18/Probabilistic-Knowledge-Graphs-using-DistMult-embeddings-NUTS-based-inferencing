@@ -78,7 +78,6 @@ In general, posterior probabilities decrease as the number of hops increases. Lo
 ## Files
 
 - `Building_a_probabilistic_KG_DistMult_Implementation.ipynb` – The main notebook implementing the entire pipeline
-- `neo4j_upload_utils.py` (optional) – A utility module for uploading prior and posterior scores to Neo4j
 
 ## How to Run
 
