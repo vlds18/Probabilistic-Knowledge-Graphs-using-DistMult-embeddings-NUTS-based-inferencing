@@ -67,3 +67,31 @@ P('de novo' AMP biosynthetic process → ATP metabolic process) ≈ 0.048 via 1 
 Path (5 hops): 'de novo' AMP biosynthetic process -[bioprocess_bioprocess] → AMP biosynthetic process -[bioprocess_bioprocess] → AMP metabolic process -[bioprocess_bioprocess] → AMP phosphorylation -[bioprocess_bioprocess] → ATP biosynthetic process -[bioprocess_bioprocess] → ATP metabolic process
 
 In general, posterior probabilities decrease as the number of hops increases. Longer paths accumulate uncertainty through successive multiplication of edge scores, providing a principled measure of confidence in indirect connections.
+
+## Applications
+
+- Generating hypotheses for biomedical research
+- Conducting multi‑step drug target inference
+- Discovering uncertain or novel associations in large knowledge graphs
+- Supporting explainable reasoning in graph‑based AI systems
+
+## Files
+
+- `Building_a_probabilistic_KG_DistMult_Implementation.ipynb` – The main notebook implementing the entire pipeline
+- `neo4j_upload_utils.py` (optional) – A utility module for uploading prior and posterior scores to Neo4j
+
+## How to Run
+
+1. Open the notebook in Google Colab or a local Jupyter environment
+2. Install the dependencies using pip (see above)
+3. Execute each cell in order. The notebook is self‑contained and will load data, train the model, perform inference, and run reasoning queries
+4. If you wish to explore the graph in Neo4j, set your AuraDB credentials and enable the upload functions
+
+## Acknowledgements
+
+This work builds upon:
+
+- [PyKEEN](https://github.com/pykeen/pykeen) for knowledge graph embeddings
+- [Pyro](https://github.com/pyro-ppl/pyro) for probabilistic programming and MCMC
+- The [PrimeKG dataset](https://github.com/mims-harvard/PrimeKG) for biomedical knowledge
+- [Neo4j AuraDB](https://neo4j.com/cloud/platform/aura-graph-database/) for optional cloud graph hosting
