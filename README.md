@@ -56,3 +56,14 @@ Using the posterior scores as edge weights, we build an undirected graph and def
 This setup supports multihop biological inference such as determining how strongly two metabolic processes are connected via intermediate steps.
 
 ## Example Output
+
+P('de novo' AMP biosynthetic process → ADSL) ≈ 0.535 via 1 path(s)
+Path (1 hop): 'de novo' AMP biosynthetic process -[bioprocess_protein] → ADSL
+
+P('de novo' AMP biosynthetic process → AMP metabolic process) ≈ 0.295 via 1 path(s)
+Path (2 hops): 'de novo' AMP biosynthetic process -[bioprocess_bioprocess] → AMP biosynthetic process -[bioprocess_bioprocess] → AMP metabolic process
+
+P('de novo' AMP biosynthetic process → ATP metabolic process) ≈ 0.048 via 1 path(s)
+Path (5 hops): 'de novo' AMP biosynthetic process -[bioprocess_bioprocess] → AMP biosynthetic process -[bioprocess_bioprocess] → AMP metabolic process -[bioprocess_bioprocess] → AMP phosphorylation -[bioprocess_bioprocess] → ATP biosynthetic process -[bioprocess_bioprocess] → ATP metabolic process
+
+In general, posterior probabilities decrease as the number of hops increases. Longer paths accumulate uncertainty through successive multiplication of edge scores, providing a principled measure of confidence in indirect connections.
